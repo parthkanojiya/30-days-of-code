@@ -135,8 +135,9 @@ h1 {
 }
 
 .services-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  flex-wrap: wrap;
 }
 
 .services-head-wrapper {
@@ -469,9 +470,73 @@ footer {
   color: #f3f3f3;
 }
 
-/********** Media Queries ***********/
+/********** Media Queries (max-width: 768px) ***********/
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .hero-img > img {
+    width: 90%;
+  }
+
+  .company-logo-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-wrapper {
+    margin: 0.5rem;
+  }
+
+  .block-first::after,
+  .block-second::after {
+    content: "";
+    width: 0;
+  }
+
+  .case-studies-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .team-cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .team-card {
+    width: 365px;
+  }
+}
+
+/********** Media Queries (max-width: 480px) ***********/
+
+@media screen and (max-width: 480px) {
   .nav-menu {
     display: none;
   }
@@ -534,7 +599,7 @@ footer {
   }
 
   .services-cards {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .services-para {
@@ -552,11 +617,8 @@ footer {
   }
 
   .case-studies-block {
-    overflow-x: scroll !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .card {
